@@ -269,7 +269,7 @@ func TestNewProvider(t *testing.T) {
 				issuer += "/"
 			}
 
-			p, err := NewProvider(ctx, issuer)
+			p, err := NewProvider(ctx, issuer, "")
 			if err != nil {
 				if !test.wantErr {
 					t.Errorf("NewProvider() failed: %v", err)
@@ -471,7 +471,7 @@ func TestUserInfoEndpoint(t *testing.T) {
 
 			ctx := context.Background()
 
-			provider, err := NewProvider(ctx, serverURL)
+			provider, err := NewProvider(ctx, serverURL, "")
 			if err != nil {
 				t.Fatalf("Failed to initialize provider for test %v", err)
 			}

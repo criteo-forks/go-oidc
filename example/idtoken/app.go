@@ -45,7 +45,7 @@ func setCallbackCookie(w http.ResponseWriter, r *http.Request, name, value strin
 func main() {
 	ctx := context.Background()
 
-	provider, err := oidc.NewProvider(ctx, "https://accounts.google.com")
+	provider, err := oidc.NewProvider(ctx, "https://accounts.google.com", "")
 	if err != nil {
 		log.Fatal(err)
 	}
