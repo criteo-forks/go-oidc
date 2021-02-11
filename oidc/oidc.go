@@ -123,7 +123,7 @@ var supportedAlgorithms = map[string]bool{
 // or "https://login.salesforce.com".
 func NewProvider(ctx context.Context, issuer, realm string) (*Provider, error) {
 	if realm != "" {
-		realm = fmt.Sprintf("realm=%s", realm)
+		realm = fmt.Sprintf("?realm=%s", realm)
 	}
 	wellKnown := strings.TrimSuffix(issuer, "/") + "/.well-known/openid-configuration" + realm
 	req, err := http.NewRequest("GET", wellKnown, nil)
